@@ -40,11 +40,19 @@
              margin-top: 10px;
              cursor: pointer;
         }
+        .close-menu{
+            text-align: right;
+            padding: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
-    <i class="fa-solid fa-bars hamburger" onclick="openSidebar()"></i>
+    <i class="fa-solid fa-bars hamburger" onclick="openSidebar()" id="hamburger-menu"></i>
     <div class="sidebar" id="sidebar">
+        <div class="close-menu" onclick="closeSidebar()">
+            <i class="fa-solid fa-xmark"></i>
+        </div>
         <div class="menu-item">
             <i class="fa-solid fa-house menu-icon"></i>
             <a href="#" class="menu-text">home</a>
@@ -52,29 +60,45 @@
         <div class="sidebar">
             <div class="menu-item">
                 <i class="fa-solid fa-house menu-icon"></i>
-                <a href="#" class="menu-text">home</a>
+                <a href="#" class="menu-text">about</a>
             </div>
             <div class="sidebar">
                 <div class="menu-item">
                     <i class="fa-solid fa-house menu-icon"></i>
-                    <a href="#" class="menu-text">home</a>
+                    <a href="#" class="menu-text">register</a>
                 </div>
                 <div class="sidebar">
                     <div class="menu-item">
                         <i class="fa-solid fa-house menu-icon"></i>
-                        <a href="#" class="menu-text">home</a>
+                        <a href="#" class="menu-text">what</a>
                     </div>
                     <div class="sidebar">
                         <div class="menu-item">
                             <i class="fa-solid fa-house menu-icon"></i>
-                            <a href="#" class="menu-text">home</a>
+                            <a href="#" class="menu-text">logout</a>
                         </div>
 
     </div>
 
 
     <script src="https://kit.fontawesome.com/a9ad840a6f.js" crossorigin="anonymous"></script>
+<script>
+    function openSidebar(){
+        const sidebarElement =  document.getElementById('sidebar');
+        sidebarElement.style.visibility='visible';
 
-    
+        const hamburgerMenuElement = document.getElementById('hamburger-menu');
+        sidebarElement.style.visibility='none';
+
+    }
+
+    function closeSidebar(){
+        const sidebarElement = document.getElementById('sidebar');
+        sidebarElement.style.visibility='hidden';
+ 
+    } const hamburgerMenuElement = document.getElementById('hamburger-menu');
+    sidebarElement.style.visibility='visible';
+</script>
+
 </body>
 </html>
