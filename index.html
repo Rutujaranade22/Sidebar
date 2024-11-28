@@ -5,45 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sidebar</title>
     <style>
-        body{
+        body {
             margin: 0;
             padding: 0;
         }
-        .sidebar{
- border-right: 1px solid black;            height: 100vh;
-            width: 300px;
+        .sidebar {
+            border-right: 1px solid black;
+            height: 100vh;
+            width: 150px;
             visibility: hidden;
-
+            position: fixed;
+            background-color: white;
         }
-        .menu-item{
-             padding: 5px;
+        .menu-item {
+            padding: 5px;
             padding-left: 10px;
             margin-bottom: 10px;
             display: flex;
             cursor: pointer;
         }
-        .menu-item:hover{
+        .menu-item:hover {
             background-color: aliceblue;
-
         }
-        .menu-icon{
+        .menu-icon {
             font-size: 20px;
             color: blueviolet;
         }
-        .menu-text{
+        .menu-text {
             text-decoration: none;
             color: blue;
             margin-left: 5px;
         }
-        .hamburger{
-             margin-left: 10px;
-             margin-top: 10px;
-             cursor: pointer;
+        .hamburger {
+            margin-left: 10px;
+            margin-top: 10px;
+            cursor: pointer;
+            padding: 10px;
         }
-        .close-menu{
+        .close-menu {
             text-align: right;
             padding: 10px;
             cursor: pointer;
+        }
+        .content {
+            margin-left: 150px;
+            padding: 20px;
         }
     </style>
 </head>
@@ -55,50 +61,59 @@
         </div>
         <div class="menu-item">
             <i class="fa-solid fa-house menu-icon"></i>
-            <a href="#" class="menu-text">home</a>
+            <a href="#" class="menu-text">Home</a>
         </div>
-        <div class="sidebar">
-            <div class="menu-item">
-                <i class="fa-solid fa-house menu-icon"></i>
-                <a href="#" class="menu-text">about</a>
-            </div>
-            <div class="sidebar">
-                <div class="menu-item">
-                    <i class="fa-solid fa-house menu-icon"></i>
-                    <a href="#" class="menu-text">register</a>
-                </div>
-                <div class="sidebar">
-                    <div class="menu-item">
-                        <i class="fa-solid fa-house menu-icon"></i>
-                        <a href="#" class="menu-text">what</a>
-                    </div>
-                    <div class="sidebar">
-                        <div class="menu-item">
-                            <i class="fa-solid fa-house menu-icon"></i>
-                            <a href="#" class="menu-text">logout</a>
-                        </div>
-
+        <div class="menu-item">
+            <i class="fa-solid fa-user menu-icon"></i>
+            <a href="#" class="menu-text">About</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-pen menu-icon"></i>
+            <a href="#" class="menu-text">Register</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-circle-left menu-icon"></i>
+            <a href="#" class="menu-text">Login</a>
+        </div>
+        <div class="menu-item">
+            <i class="fa-solid fa-sign-out-alt menu-icon"></i>
+            <a href="#" class="menu-text">Logout</a>
+        </div>
     </div>
 
 
+    <div class="content">
+        <h1 style="color: red;">Welcome to Our Website....👆</h1>
+        <p>This is a simple page layout with a sidebar navigation menu. The sidebar contains links to various sections like Home, About, Register, and more.</p>
+        <h2 style="color: red;">About Us (●'◡'●)</h2>
+        <p>We are committed to providing the best services to our users. Feel free to navigate through the sidebar to explore more about what we offer.</p>
+        <h2 style="color: red;">How to Use</h2>
+        <ul>
+            <li>Click the hamburger icon on the top left to open the sidebar.</li>
+            <li>Select any menu item to navigate to the respective section.</li>
+            <li>Click the close icon in the sidebar to hide it again.</li>
+        </ul>
+        <h2 style="color: red;">Contact Us..📞</h2>
+        <p>If you have any questions or feedback, please contact me...<a href=" ranaderutuja7@gmail.com">ranaderutuja7@gmail.com</a>.</p>
+    </div>
+
     <script src="https://kit.fontawesome.com/a9ad840a6f.js" crossorigin="anonymous"></script>
-<script>
-    function openSidebar(){
-        const sidebarElement =  document.getElementById('sidebar');
-        sidebarElement.style.visibility='visible';
+    <script>
+        function openSidebar() {
+            const sidebarElement = document.getElementById('sidebar');
+            sidebarElement.style.visibility = 'visible';
 
-        const hamburgerMenuElement = document.getElementById('hamburger-menu');
-        sidebarElement.style.visibility='none';
+            const hamburgerMenuElement = document.getElementById('hamburger-menu');
+            hamburgerMenuElement.style.display = 'none';
+        }
 
-    }
+        function closeSidebar() {
+            const sidebarElement = document.getElementById('sidebar');
+            sidebarElement.style.visibility = 'hidden';
 
-    function closeSidebar(){
-        const sidebarElement = document.getElementById('sidebar');
-        sidebarElement.style.visibility='hidden';
- 
-    } const hamburgerMenuElement = document.getElementById('hamburger-menu');
-    sidebarElement.style.visibility='visible';
-</script>
-
+            const hamburgerMenuElement = document.getElementById('hamburger-menu');
+            hamburgerMenuElement.style.display = 'block';
+        }
+    </script>
 </body>
 </html>
